@@ -4,5 +4,5 @@ Useful for making applications think your username is different from what it rea
 
 Use like:
 ```
-FAKE_USER=notme LD_PRELOAD=/path/to/libfakeuser.so ./crappy_application
+env FAKE_USER=notme LD_PRELOAD=/path/to/libfakeuser.so ./crappy_application
 ```
