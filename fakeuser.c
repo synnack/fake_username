@@ -133,7 +133,7 @@ static void fakeuser_init(void) {
     setenv("USER", fake_user, true);
     setenv("LOGNAME", fake_user, true);
 
-    // Find out the origanl username
+    // Find out the original username
     struct passwd *(*o_getpwuid)(__uid_t __uid) = dlsym(RTLD_NEXT, "getpwuid");
     struct passwd *pw_ent = o_getpwuid(getuid());
     strncpy(original_user, pw_ent->pw_name, ORIGINAL_USER_SIZE-1);
