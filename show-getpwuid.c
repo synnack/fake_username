@@ -95,16 +95,17 @@ int main() {
 	errors++;
     }
 
-    printf("getpwuid(uid):                  %s\n", uid_ent->pw_name);
-    printf("getpwuid(euid):                 %s\n", euid_ent->pw_name);
-    printf("getpwnam(getpwuid(uid)):        %s\n", uid_nam->pw_name);
-    printf("getpwnam(getpwuid(euid)):       %s\n", euid_nam->pw_name);
-    printf("getpwuid_r(uid):                %s\n", uid_r_ent.pw_name);
-    printf("getpwuid_r(euid):               %s\n", euid_r_ent.pw_name);
-    printf("getpwnam_r(getpwuid_r(uid)):    %s\n", uidnam_r_ent.pw_name);
-    printf("getpwnam_r(getpwuid_r(euid)):   %s\n", euidnam_r_ent.pw_name);
-    printf("LOGNAME env:                    %s\n", env_logname);
-    printf("USER env:                       %s\n", env_user);
+    printf("getpwuid(uid):                   %s\n", uid_ent->pw_name);
+    printf("getpwuid(euid):                  %s\n", euid_ent->pw_name);
+    printf("getpwnam(getpwuid(uid)):         %s\n", uid_nam->pw_name);
+    printf("getpwnam(getpwuid(euid)):        %s\n", euid_nam->pw_name);
+    printf("getpwuid_r(uid):                 %s\n", uid_r_ent.pw_name);
+    printf("getpwuid_r(euid):                %s\n", euid_r_ent.pw_name);
+    printf("getpwnam_r(getpwuid_r(uid)):     %s\n", uidnam_r_ent.pw_name);
+    printf("getpwnam_r(getpwuid_r(euid)):    %s\n", euidnam_r_ent.pw_name);
+    printf("LOGNAME env:                     %s\n", env_logname);
+    printf("USER env:                        %s\n", env_user);
+    printf("getgrouplist(getpwuid(getuid()):\n");
     for (int i = 0; i < ngroups; i++) {
 	printf("Group: %d\n", groups[i]);
 	struct group *gr_ent = getgrgid(groups[i]);
